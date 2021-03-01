@@ -73,10 +73,17 @@
 
     VPN.showJoinWaitList = function() {
         document.body.classList.add('vpn-not-available');
+
+        // Remove subscribe links from the page.
+        var subscribeButton = document.querySelectorAll('.js-get-vpn');
+
+        for (var i = 0; i < subscribeButton.length; i++) {
+            subscribeButton[i].parentNode.removeChild(subscribeButton[i]);
+        }
     };
 
     VPN.isAvailable = function(countryCode, countries) {
-        var availableCountries = document.getElementsByTagName('html')[0].getAttribute('data-vpn-allowed-country-codes') || countries;
+        var availableCountries = document.getElementsByTagName('html')[0].getAttribute('data-vpn-fixed-price-country-codes') || countries;
         if (countryCode && availableCountries.indexOf('|' + countryCode + '|') !== -1) {
 
             window.dataLayer.push({
