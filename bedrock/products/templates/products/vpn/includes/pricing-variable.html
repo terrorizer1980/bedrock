@@ -2,7 +2,7 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-<div class="vpn-pricing-variable">
+<div class="vpn-variable-pricing-block hide-from-legacy-ie">
   <h2 class="vpn-pricing-variable-heading">{{ ftl('vpn-shared-pricing-variable-heading') }}</h2>
 
   <h3 class="vpn-pricing-variable-sub-heading">{{ ftl('vpn-shared-pricing-variable-sub-heading') }}</h3>
@@ -34,14 +34,13 @@
       },
       optional_attributes={
         'data-cta-type': 'fxa-vpn',
-        'data-cta-text': 'Get Mozilla VPN (6 month)'
+        'data-cta-text': 'Get Mozilla VPN 6-month'
       }
     ) }}
 
-    <p><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
-
+    <p class="refund-policy"><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
     <p class="vpn-pricing-variable-saving">{{ ftl('vpn-shared-pricing-save-percent', percent=30) }}</p>
-    <p>{{ ftl('vpn-shared-pricing-total', amount=variable_6_month_price_total) }}</p>
+    <p class="vpn-pricing-variable-total">{{ ftl('vpn-shared-pricing-total', amount=variable_6_month_price_total) }}</p>
   {% endcall %}
 
    {% call vpn_content_block(
@@ -59,14 +58,13 @@
        },
        optional_attributes={
          'data-cta-type': 'fxa-vpn',
-         'data-cta-text': 'Get Mozilla VPN (12 month)'
+         'data-cta-text': 'Get Mozilla VPN 12-month'
        }
      ) }}
 
-     <p><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
-
+     <p class="refund-policy"><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
      <p class="vpn-pricing-variable-saving">{{ ftl('vpn-shared-pricing-save-percent', percent=50) }}</p>
-     <p>{{ ftl('vpn-shared-pricing-total', amount=variable_12_month_price_total) }}</p>
+     <p class="vpn-pricing-variable-total">{{ ftl('vpn-shared-pricing-total', amount=variable_12_month_price_total) }}</p>
    {% endcall %}
 
    {% call vpn_content_block(
@@ -88,7 +86,7 @@
        }
      ) }}
 
-     <p><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
+     <p class="refund-policy"><a href="{{ url('products.vpn.landing')}}#faq-refunds">{{ ftl('vpn-shared-refund-policy') }}</a></p>
    {% endcall %}
  </div>
 </div>

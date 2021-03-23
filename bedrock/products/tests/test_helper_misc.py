@@ -36,7 +36,7 @@ class TestVPNSubscribeLink(TestCase):
     def test_vpn_subscribe_link(self):
         """Should return expected markup"""
         markup = self._render(entrypoint='www.mozilla.org-vpn-product-page', link_text='Get Mozilla VPN',
-                              class_name='mzp-c-button js-text-vpn-fixed-price-available',
+                              class_name='mzp-c-button',
                               optional_parameters={'utm_campaign': 'vpn-product-page'},
                               optional_attributes={'data-cta-text': 'Get Mozilla VPN monthly', 'data-cta-type':
                                                    'fxa-vpn', 'data-cta-position': 'primary'})
@@ -44,7 +44,7 @@ class TestVPNSubscribeLink(TestCase):
             u'<a href="https://vpn.mozilla.org/r/vpn/subscribe?entrypoint=www.mozilla.org-vpn-product-page'
             u'&form_type=button&utm_source=www.mozilla.org-vpn-product-page&utm_medium=referral'
             u'&utm_campaign=vpn-product-page" data-action="https://accounts.firefox.com/" '
-            u'class="js-fxa-cta-link js-fxa-product-button mzp-c-button js-text-vpn-fixed-price-available" '
+            u'class="js-fxa-cta-link js-fxa-product-button mzp-c-button" '
             u'data-cta-text="Get Mozilla VPN monthly" data-cta-type="fxa-vpn" data-cta-position="primary">'
             u'Get Mozilla VPN</a>')
         self.assertEqual(markup, expected)

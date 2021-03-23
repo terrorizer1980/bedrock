@@ -1326,23 +1326,29 @@ VPN_ENDPOINT = config('VPN_ENDPOINT',
 
 # Countries where VPN is available at a fixed monthly price.
 VPN_FIXED_PRICE_COUNTRY_CODES = [
-  'CA', #Canada
-  'MY', #Malaysia
-  'NZ', #New Zealand
-  'SG', #Singapore
-  #United Kingdom + "Territories"
-  'GB', #United Kingdom of Great Britain and Northern Island
-  'GG', #Guernsey (a British Crown dependency)
-  'IM', #Isle of Man (a British Crown dependency)
-  'IO', #British Indian Ocean Territory
-  'JE', #Jersey (a British Crown dependency)
-  'UK', #United Kingdom
-  'VG', #Virgin Islands (British)
-  #USA + "Territories"
-  'AS', #American Samoa
-  'MP', #Northern Mariana Islands
-  'PR', #Puerto Rico
-  'UM', #United States Minor Outlying Islands
-  'US', #United States of America
-  'VI', #Virgin Islands (U.S.)
+    'CA', # Canada
+    'MY', # Malaysia
+    'NZ', # New Zealand
+    'SG', # Singapore
+    # United Kingdom + "Territories"
+    'GB', # United Kingdom of Great Britain and Northern Island
+    'GG', # Guernsey (a British Crown dependency)
+    'IM', # Isle of Man (a British Crown dependency)
+    'IO', # British Indian Ocean Territory
+    'JE', # Jersey (a British Crown dependency)
+    'UK', # United Kingdom
+    'VG', # Virgin Islands (British)
+    # USA + "Territories"
+    'AS', # American Samoa
+    'MP', # Northern Mariana Islands
+    'PR', # Puerto Rico
+    'UM', # United States Minor Outlying Islands
+    'US', # United States of America
+    'VI', # Virgin Islands (U.S.)
+]
+
+# Countries where VPN is available using variable pricing model.
+VPN_VARIABLE_PRICE_COUNTRY_CODES = [
+    'DE', # Germany
+    'FR', # France
 ]

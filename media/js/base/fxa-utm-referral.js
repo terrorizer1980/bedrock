@@ -21,7 +21,8 @@ if (typeof window.Mozilla === 'undefined') {
         'https://latest.dev.lcip.org/',
         'https://stable.dev.lcip.org/',
         'https://vpn.mozilla.org/',
-        'https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net/'
+        'https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net/',
+        'https://guardian-dev.herokuapp.com/'
     ];
 
     var utms = ['utm_source', 'utm_campaign', 'utm_content', 'utm_term', 'utm_medium'];
