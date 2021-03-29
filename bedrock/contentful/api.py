@@ -1,4 +1,5 @@
 from django.conf import settings
+from urllib.parse import urlparse, parse_qs
 
 import contentful as api
 from rich_text_renderer import RichTextRenderer
@@ -104,7 +105,10 @@ def _get_aspect_ratio_class(aspect_ratio):
         '3:2' : '3-2',
         '16:9' : '16-9',
     }
-    return 'mzp-has-aspect-' + ratios[aspect_ratio] if aspect_ratio in ratios else ''
+
+    ratio = ratios[aspect_ratio] if aspect_ratio in ratios else '16-9'
+
+    return 'mzp-has-aspect-' + ratio
 
 def _get_width_class(width):
     width_abbr = _get_abbr_from_width(width)
@@ -113,6 +117,11 @@ def _get_width_class(width):
 def _get_theme_class(theme):
     return 'mzp-t-dark' if theme == "Dark" else ''
 
+def _get_youtube_id(youtube_url):
+    url_data = urlparse(youtube_url)
+    queries = parse_qs(url_data.query)
+    youtube_id = queries["v"]
+    return youtube_id
 
 class ContentfulBase:
     def __init__(self):
@@ -205,6 +214,8 @@ class ContentfulPage(ContentfulBase):
                         entries.append(self.get_card_layout_data(item.id))
                     elif content_type == 'layout3Cards':
                         entries.append(self.get_card_layout_data(item.id))
+                    elif content_type == 'layout4Cards':
+                        entries.append(self.get_card_layout_data(item.id))
                     elif content_type == 'layout5Cards':
                         entries.append(self.get_card_layout_data(item.id))
 
@@ -225,6 +236,8 @@ class ContentfulPage(ContentfulBase):
                     elif content_type == 'layout2Cards':
                         entries.append(self.get_card_layout_data(item.id))
                     elif content_type == 'layout3Cards':
+                        entries.append(self.get_card_layout_data(item.id))
+                    elif content_type == 'layout4Cards':
                         entries.append(self.get_card_layout_data(item.id))
                     elif content_type == 'layout5Cards':
                         entries.append(self.get_card_layout_data(item.id))
@@ -309,6 +322,11 @@ class ContentfulPage(ContentfulBase):
         highres_image_url = _get_image_url(card_image, 800, aspect_ratio)
         image_url = _get_image_url(card_image, 800, aspect_ratio)
 
+        if 'you_tube' in card_fields:
+            youtube_id = _get_youtube_id(card_fields.get('you_tube'))
+        else:
+            youtube_id = ''
+
         card_data = {
                 'component': 'card',
                 'heading': card_fields.get('heading'),
@@ -318,6 +336,7 @@ class ContentfulPage(ContentfulBase):
                 'aspect_ratio': _get_aspect_ratio_class(aspect_ratio),
                 'highres_image_url': highres_image_url,
                 'image_url': image_url,
+                'youtube_id': youtube_id,
             }
 
         return card_data
