@@ -128,3 +128,4 @@ zope.interface==5.2.0 \
     --hash=sha256:f057897711a630a0b7a6a03f1acf379b6ba25d37dc5dc217a97191984ba7f2fc \
     --hash=sha256:f37d45fab14ffef9d33a0dc3bc59ce0c5313e2253323312d47739192da94f5fd \
     --hash=sha256:f44906f70205d456d503105023041f1e63aece7623b31c390a0103db4de17537
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
