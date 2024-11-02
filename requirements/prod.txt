@@ -2,7 +2,7 @@
 
 
 
-gevent==20.6.2 \
+gevent==24.10.1 \
     --hash=sha256:0b16dd85eddaf6acdad373ce90ed4da09ef466cbc5e0ee5932d13f099929e844 \
     --hash=sha256:0f3fbb1703b10609856e5dffb0e358bf5edf57e52dc7cd7226e3f8674fdc0a0f \
     --hash=sha256:13c74d6784ef5ada2666abf2bb310d27a1d14291f7cac46148f336b19f714d40 \
